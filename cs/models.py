@@ -1,3 +1,4 @@
+from django.contrib.auth.models import UserManager
 from django.db import models
 from datetime import datetime
 
@@ -5,12 +6,13 @@ from datetime import datetime
 class User(models.Model):
     UID = models.BigAutoField(primary_key=True)
     First_Name = models.CharField(max_length=20, null=False)
-    Middle_Name = models.CharField(max_length=20)
+    Middle_Name = models.CharField(max_length=20,null=False)
     Last_Name = models.CharField(max_length=20, null=False)
     Email = models.EmailField(null=False)
     Phone_Number = models.CharField(max_length=10, null=False)
     Type = models.CharField(max_length=10, null=False, default='Developer')
     Password = models.CharField(max_length=100, null=False)
+
 
 
 class Team(models.Model):
